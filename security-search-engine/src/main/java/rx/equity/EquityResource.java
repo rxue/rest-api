@@ -21,10 +21,9 @@ public class EquityResource {
             .build();
 	WebTarget target = client.target("https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo");
 	Invocation webServiceCall = target.request()
-			.accept(javax.ws.rs.core.MediaType.TEXT_PLAIN)
+			.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON_TYPE)
 			.buildGet();
 	String responseString = webServiceCall.invoke(String.class);
-	System.out.println("DEBUG::::" + responseString);
     return new Equity.Builder()
     		.setTickerSymbol("FORTUM")
     		.setCompanyName("Fortum Oyj")
