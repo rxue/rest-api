@@ -10,6 +10,7 @@
 
     <properties>
       <version.wildfly.bom>8.2.2.Final</version.wildfly.bom>
+      <version.jsonp>1.0.4</version.jsonp>
       <maven.compiler.source>1.8</maven.compiler.source>
       <maven.compiler.target>1.8</maven.compiler.target>
       <version.war.plugin>3.3.1</version.war.plugin>
@@ -60,6 +61,11 @@
             <artifactId>jaxrs-api</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+		    <groupId>org.glassfish</groupId>
+		    <artifactId>javax.json</artifactId>
+		    <version>${version.jsonp}</version>
+		</dependency>
         
         <!-- Import the JPA API, we use provided scope as the API is included in JBoss WildFly -->
         <dependency>
