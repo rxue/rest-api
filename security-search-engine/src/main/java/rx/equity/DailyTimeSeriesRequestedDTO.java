@@ -5,12 +5,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TimeSeriesRequestedDTO {
+public class DailyTimeSeriesRequestedDTO {
 	private final String symbol;
 	private final LocalDate lastRefreshed;
 	private final String timeZone;
 	private final List<DailyItem> dailyItems;
-	private TimeSeriesRequestedDTO(Builder builder) {
+	private DailyTimeSeriesRequestedDTO(Builder builder) {
 		this.symbol = builder.symbol;
 		this.lastRefreshed = builder.lastRefreshed;
 		this.timeZone = builder.timeZone;
@@ -46,8 +46,8 @@ public class TimeSeriesRequestedDTO {
 			dailyItems.add(new DailyItem(date, closePrice));
 			return this;
 		}
-		public TimeSeriesRequestedDTO build() {
-			return new TimeSeriesRequestedDTO(this);
+		public DailyTimeSeriesRequestedDTO build() {
+			return new DailyTimeSeriesRequestedDTO(this);
 		}
 	}
 

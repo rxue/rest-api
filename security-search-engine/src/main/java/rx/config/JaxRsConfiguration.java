@@ -12,6 +12,7 @@ import javax.ws.rs.core.Application;
  * </p>
  */
 @ApplicationPath("/rest")
-public class JaxRsActivator extends Application {
+public class JaxRsConfiguration extends Application {
+	public static final String ENDPOINT_HOST = "https://www.alphavantage.co";
     public static final String API_KEY = System.getProperty("apikey");
 }
