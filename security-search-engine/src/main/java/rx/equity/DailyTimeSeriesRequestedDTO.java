@@ -54,7 +54,7 @@ public class DailyTimeSeriesRequestedDTO {
 	public static class DailyItem {
 		private final LocalDate date;
 		private final BigDecimal closePrice;
-		private DailyItem(LocalDate date, BigDecimal closePrice) {
+		public DailyItem(LocalDate date, BigDecimal closePrice) {
 			this.date = date;
 			this.closePrice = closePrice;
 		}
