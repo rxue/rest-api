@@ -14,7 +14,7 @@ public class EquityResource {
   private DailyTimeSeriesDAO dao;
   @GET
   @Produces(MediaType.APPLICATION_JSON)
-  public DailyTimeSeriesRequestedDTO getEquity() {
+  public TimeSeriesRequestedDTO getEquity() {
     return dao.getByTickerSymbol("IBM");
   }
 }
