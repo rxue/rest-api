@@ -42,7 +42,7 @@ public class DailyTimeSeriesDAO {
 			LocalDate date = lastRefreshed.minusDays(i++);
 			JsonObject timeSeriesItem = timeSeries.getJsonObject(date.toString());
 			if (timeSeriesItem != null) {
-				PriceQuarternity priceQuarternity = new PriceQuarternity.Builder()
+				RequestedPriceQuarternity priceQuarternity = new RequestedPriceQuarternity.Builder()
 						.setClose(timeSeriesItem.getString("4. close"))
 						.build();
 				resultBuilder.appendPrice(date, priceQuarternity);

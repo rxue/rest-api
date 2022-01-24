@@ -1,13 +1,11 @@
 package rx.equity;
 
-import java.math.BigDecimal;
-
-final class PriceQuarternity {
+final class RequestedPriceQuarternity {
 	private final String open;
 	private final String close;
 	private final String high;
 	private final String low;
-	private PriceQuarternity(Builder builder) {
+	private RequestedPriceQuarternity(Builder builder) {
 		this.open = builder.open;
 		this.close = builder.close;
 		this.high = builder.high;
@@ -56,8 +54,8 @@ final class PriceQuarternity {
 			this.low = low;
 			return this;
 		}
-		public PriceQuarternity build() {
-			return new PriceQuarternity(this);
+		public RequestedPriceQuarternity build() {
+			return new RequestedPriceQuarternity(this);
 		}
 	}
 }

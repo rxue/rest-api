@@ -1,6 +1,5 @@
 package rx.equity;
 
-import java.time.LocalDate;
 import java.time.temporal.Temporal;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +11,17 @@ class TimeSeriesRequestedDTO<T extends Temporal> {
 		this.metadata = new Metadata(builder.information, builder.symbol, builder.lastRefreshed, builder.timeZone);
 		this.priceSeries = builder.priceSeries;
 	}
-
-	public class Metadata {
+	
+	public String getSymbol() {
+		return metadata.symbol;
+	}
+	public String getTimeZone() {
+		return metadata.timeZone;
+	}
+	public List<Price<T>> getPriceSeries() {
+		return priceSeries;
+	}
+	private class Metadata {
 		private final String information;
 		private final String symbol;
 		private final T lastRefreshed;
@@ -28,15 +36,15 @@ class TimeSeriesRequestedDTO<T extends Temporal> {
 	
 	public static class Price<T extends Temporal> {
 		private final T timeStamp;
-		private final PriceQuarternity priveQuarternity;
-		public Price(T timeStamp, PriceQuarternity priveQuarternity) {
+		private final RequestedPriceQuarternity priveQuarternity;
+		public Price(T timeStamp, RequestedPriceQuarternity priveQuarternity) {
 			this.timeStamp = timeStamp;
 			this.priveQuarternity = priveQuarternity;
 		}
 		public T getTimeStamp() {
 			return timeStamp;
 		}
-		public PriceQuarternity getPriveQuarternity() {
+		public RequestedPriceQuarternity getPriveQuarternity() {
 			return priveQuarternity;
 		}
 		
@@ -67,7 +75,7 @@ class TimeSeriesRequestedDTO<T extends Temporal> {
 			this.timeZone = timeZone;
 			return this;
 		}
-		public Builder<T> appendPrice(T timeStamp, PriceQuarternity priceValues) {
+		public Builder<T> appendPrice(T timeStamp, RequestedPriceQuarternity priceValues) {
 			priceSeries.add(new Price<T>(timeStamp, priceValues));
 			return this;
 		}
