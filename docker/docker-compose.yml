@@ -5,4 +5,12 @@ services:
     ports: 
     - "8082:8082"
     container_name: security-search-engine
-
+  postgres:
+    image: postgres
+    restart: always
+    user: postgres
+    environment:
+    #  POSTGRES_USER: stock
+      POSTGRES_PASSWORD: test
+    ports:
+    -  "5432:5432"
