@@ -10,7 +10,6 @@ services:
     restart: always
     user: postgres
     environment:
-    #  POSTGRES_USER: stock
       POSTGRES_PASSWORD: test
     ports:
     -  "5432:5432"
