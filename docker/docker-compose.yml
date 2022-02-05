@@ -10,6 +10,7 @@ services:
     restart: always
     user: postgres
     environment:
+      POSTGRES_DB: security
       POSTGRES_PASSWORD: test
     ports:
     -  "5432:5432"

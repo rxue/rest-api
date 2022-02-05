@@ -4,7 +4,4 @@ COPY target/security-search-engine-1.0-SNAPSHOT.war /opt/jboss/wildfly/standalon
 COPY docker-config/standalone.xml /opt/jboss/wildfly/standalone/configuration/
 COPY docker-config/postgresql-${postgresql.version}.jar /opt/jboss/wildfly/modules/system/layers/base/org/postgresql/main/
 COPY docker-config/postgresql.module.xml /opt/jboss/wildfly/modules/system/layers/base/org/postgresql/main/module.xml
-RUN mkdir -p /opt/jboss/wildfly/modules/system/layers/base/org/postgresql/shaded/main
-COPY docker-config/postgresql-${postgresql.version}.jar /opt/jboss/wildfly/modules/system/layers/base/org/postgresql/shaded/main/
-COPY docker-config/postgresql.shaded.module.xml /opt/jboss/wildfly/modules/system/layers/base/org/postgresql/shaded/main/module.xml
 ENTRYPOINT ["/opt/jboss/wildfly/bin/standalone.sh", "-c", "standalone.xml", "-Djboss.http.port=8082", "-Dapikey=${apikey}", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
