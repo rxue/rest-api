@@ -3,6 +3,7 @@ package rx.rest;
 import javax.enterprise.context.ApplicationScoped;
 import javax.json.JsonObject;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -23,7 +24,10 @@ public class CompanyResource {
 		company.setCompanyCode("VZ");
 		company.setHeadquarter(Region.AMERICA);
 		company.setName("Verizon");
+		EntityTransaction et = entityManager.getTransaction();
+		et.begin();
 		entityManager.persist(company);
+		et.commit();
 	}
 
 }
