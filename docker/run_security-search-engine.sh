@@ -1,4 +1,4 @@
-docker-compose up -d --build postgres
+docker-compose up -d --build --force-recreate --renew-anon-volumes postgres
 CONFIG_DIR=../security-search-engine/docker-config
 get_postgresql_version () {
   local _postgresql_line=`grep "<version.postgresql>" ../security-search-engine/pom.xml`
