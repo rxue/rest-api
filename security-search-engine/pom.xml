@@ -83,6 +83,7 @@
             <artifactId>hibernate-validator</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jboss.spec.javax.transaction/jboss-transaction-api_1.1_spec -->
         <dependency>
     		<groupId>org.postgresql</groupId>
     		<artifactId>postgresql</artifactId>

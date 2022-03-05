@@ -1,3 +1,4 @@
+# This script is generated on base of template
 FROM jboss/wildfly
 RUN mkdir -p /opt/jboss/wildfly/modules/system/layers/base/org/postgresql/main
 COPY target/security-search-engine-1.0-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/

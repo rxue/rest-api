@@ -1,8 +1,8 @@
-INSERT INTO company VALUES('FORTUM','Fortum', 'FINLAND');
-INSERT INTO company VALUES('SAMPO','Sampo', 'FINLAND');
-INSERT INTO company VALUES('PFE','Pfizer', 'AMERICA');
-INSERT INTO company VALUES('GILD','Gilead', 'AMERICA');
-INSERT INTO company VALUES('BABA','ALIBABA', 'CHINA');
+INSERT INTO company VALUES('FORTUM', 'FINLAND', 'Fortum');
+INSERT INTO company VALUES('SAMPO', 'FINLAND', 'Sampo');
+INSERT INTO company VALUES('PFE', 'AMERICA', 'Pfizer');
+INSERT INTO company VALUES('GILD', 'AMERICA', 'Gilead');
+INSERT INTO company VALUES('BABA', 'CHINA', 'ALIBABA');
 INSERT INTO stockexchange VALUES('NYSE', 'New York Stock Exchange', 'AMERICA');
 INSERT INTO stockexchange VALUES('NASDAQ', 'NASDAQ Stock Exchange', 'AMERICA');
 INSERT INTO stockexchange VALUES('HEL', 'NASDAQ:Helsinki Stock Exchange', 'AMERICA');
