@@ -16,4 +16,8 @@ services:
     -  "5432:5432"
     volumes:
     - ./volumes/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
-
+  masterdata:
+    build: ../masterdata
+    ports: 
+    - "8080:8080"
+    container_name: masterdata
