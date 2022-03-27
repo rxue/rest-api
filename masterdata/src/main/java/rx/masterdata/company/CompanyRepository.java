@@ -2,12 +2,10 @@ package rx.masterdata.company;
 
 import java.util.List;
 
-import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
-@Stateless
-public class Repository {
+public class CompanyRepository {
 	@Inject
 	private EntityManager entityManager;
 	

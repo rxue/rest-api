@@ -7,22 +7,23 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import rx.masterdata.company.Company;
-import rx.masterdata.company.Repository;
+import rx.masterdata.company.CompanyService;
 
 @Path("/company")
 public class CompanyResource {
   @Inject	
-  private Repository repository;
+  private CompanyService service;
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public List<Company> all() {
-    return repository.all();
+    return service.listAll();
   }
   @POST
-  public void create(Company company) {
-	repository.save(company);
+  public void create(Company company, @QueryParam("apikey") String apiKey) {
+	service.create(company, apiKey);
   }
 }
