@@ -1,1 +1,1 @@
-INSERT INTO company VALUES('FORTUM', 1, 0, 'Fortum');
+INSERT INTO company VALUES('FORTUM', 'FI', 0, 'Fortum');

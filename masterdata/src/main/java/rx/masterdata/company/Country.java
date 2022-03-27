@@ -1,5 +1,13 @@
 package rx.masterdata.company;
 
 public enum Country {
-	CHINA, FINLAND, AMERICA, GERMANY
+	CN("China"), DE("Germany"), FI("Finland"), US("America");
+	private String fullName;
+	private Country(String fullName) {
+		this.fullName = fullName;
+	}
+	@Override
+	public String toString() {
+		return fullName;
+	}
 }

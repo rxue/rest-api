@@ -1,6 +1,9 @@
 package rx.masterdata.company;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 
 @Entity
@@ -9,6 +12,8 @@ public class Company {
 	private String id;
 	private CompanyIdType idType;
 	private String name;
+	@Enumerated(EnumType.STRING)
+	@Column(length=2)
 	private Country country;
 	public String getId() {
 		return id;
@@ -28,11 +33,11 @@ public class Company {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Country getCountry() {
-		return country;
+	public String getCountry() {
+		return country.toString();
 	}
-	public void setCountry(Country country) {
-		this.country = country;
+	public void setCountry(String countryName) {
+		this.country = Country.valueOf(countryName);
 	}
 	
 }
