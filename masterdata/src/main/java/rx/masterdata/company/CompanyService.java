@@ -16,6 +16,9 @@ public class CompanyService {
 	}
 	public void create(Company company, String apiKey) throws MissingAPIKeyException {
 		repo.save(company);
+		validateAPIKey(apiKey);
+	}
+	private void validateAPIKey(String apiKey) throws MissingAPIKeyException {
 		if (!API_KEY.equals(apiKey))
 			throw new MissingAPIKeyException();
 	}
