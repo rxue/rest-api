@@ -11,7 +11,7 @@ public class Company {
 	@Id
 	private String id;
 	private CompanyIdType idType;
-	private String name;
+	private String fullName;
 	@Enumerated(EnumType.STRING)
 	@Column(length=2)
 	private Country country;
@@ -27,11 +27,15 @@ public class Company {
 	public void setIdType(CompanyIdType idType) {
 		this.idType = idType;
 	}
+	public void setIdType(String idTypeString) {
+		System.out.println("DEBUG:::::::::::::::::::::::");
+		this.idType = CompanyIdType.valueOf(idTypeString);
+	}
 	public String getName() {
-		return name;
+		return fullName;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.fullName = name;
 	}
 	public String getCountry() {
 		return country.toString();

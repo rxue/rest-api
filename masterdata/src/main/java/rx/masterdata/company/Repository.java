@@ -18,4 +18,9 @@ public class Repository {
 		return entityManager.createQuery("select a from Company a", Company.class)
 				.getResultList();
 	}
+	
+	public Company save(Company company) {
+		entityManager.persist(company);
+		return company;
+	}
 }
