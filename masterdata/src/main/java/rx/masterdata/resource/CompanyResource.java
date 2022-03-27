@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 
 import rx.masterdata.company.Company;
 import rx.masterdata.company.CompanyService;
+import rx.masterdata.company.MissingAPIKeyException;
 
 @Path("/company")
 public class CompanyResource {
@@ -20,10 +21,10 @@ public class CompanyResource {
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public List<Company> all() {
-    return service.listAll();
+    return service.findAll();
   }
   @POST
-  public void create(Company company, @QueryParam("apikey") String apiKey) {
+  public void create(Company company, @QueryParam("apikey") String apiKey) throws MissingAPIKeyException {
 	service.create(company, apiKey);
   }
 }
