@@ -3,11 +3,11 @@
 ## After app started successfully, how to test
 Documentation is available in https://localhost/swagger-ui/index.html
 
-There is one account with *id* `1`, so you can send the followring request example with `curl`:
+There is one account with *id* `1`, so you can send the following request example with `curl`:
 
 * charge: `curl --insecure -X PUT -H "Content-Type: application/json" -d '{"id": "1","playerAccountId":"1","amount":"5", "type":"CHARGE", "timestamp":"2025-03-10T15:30:00Z"}' https://localhost/api/account/event`
 * win: `curl --insecure -X PUT -H "Content-Type: application/json" -d '{"id": "1","playerAccountId":"2","amount":"5", "type":"WIN", "timestamp":"2025-03-17T15:30:00Z"}' https://localhost/api/account/event`
 
 
-# How to run all the tests` in terminal
+# How to run all the tests in terminal
 `cd` to `tests` directory, then execute with command `source run_all_tests.sh`
